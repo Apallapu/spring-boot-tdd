@@ -1,0 +1,5 @@
+com\poc\contoller\CustomerControllerTest.class
+com\poc\service\CustomerServiceTest.class
+com\poc\CustomerServiceApplicationTests.class
+com\poc\repository\CustomerRepositoryTest.class
+com\poc\service\CustomerServiceIntegrationTest.class
