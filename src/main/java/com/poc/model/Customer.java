@@ -1,5 +1,7 @@
 package com.poc.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -8,19 +10,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = -3009157732242241606L;
+	@Schema(description = "Unique identifier of the Customer.",
+			example = "1", required = true)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
+	@Schema(description = "firstName of the customer.",
+			example = "Raju", required = true)
+	@NotBlank
+	@Size(max = 100)
 	@Column(name = "firstname")
 	private String firstName;
-
+	@Schema(description = "lastName of the customer.",
+			example = "Pallapu", required = true)
+	@NotBlank
+	@Size(max = 100)
 	@Column(name = "lastname")
 	private String lastName;
 
